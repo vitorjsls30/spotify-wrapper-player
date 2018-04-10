@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>04 - Temporal Dead Zone</title>
+</head>
+<body></body>
+<script>
+  console.log(cat);
+  //if you use var, the js engine will make a hosting
+  //of all the variables in the scope, warning you about its usage
+  var cat = 'meow';
+
+  //if you use const or let, you'll actually get an error
+  //const cat = 'meow'
+  //let cat = 'meow'
+</script>
+</html>

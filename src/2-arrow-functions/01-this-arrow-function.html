@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>01 - This behavior at arrow function</title>
+</head>
+<body>
+  <button id="btn">click me!</button>
+</body>
+<script>
+  //inside a normal function, this referes to the btn itself
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click',
+    function() {console.log(this);}
+    //in an Arrow Function, this relates to the outer scope, the window object
+    // () => {console.log(this);}
+  );
+</script>
+</html>
