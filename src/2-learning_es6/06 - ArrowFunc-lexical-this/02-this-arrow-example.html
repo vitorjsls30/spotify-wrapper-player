@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>02 - this behavior at the Arrow Function</title>
+</head>
+<body>
+  <button id="btn">Make my Sandwitch!</button>
+</body>
+<script>
+  const sandwich = {
+    bread: 'white',
+    cheese: 'cheddar',
+
+    prepare: function() {
+      return `I want a sandwich with ${this.bread} bread and ${this.cheese} cheese!`;
+    },
+
+    make: function() {
+      window.setTimeout(
+        //in a normal function, this takes the context of const sandwich, the window component
+        //In an Arrow function this relates to the const sandwich scope
+        () => {
+          console.log(this.prepare());
+        },
+        500);
+    }
+  }
+
+  const btn = document.getElementById(`btn`);
+
+  btn.addEventListener('click', function() {sandwich.make()});
+</script>
+</html>
