@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01 - Prototype Inheritance</title>
+</head>
+<body>
+
+</body>
+<script>
+  function Animal(kind, sound) {
+    this.kind = kind;
+    this.sound = sound;
+  }
+
+  Animal.prototype.hello = function() {
+    console.log(`${this.sound}, I'm a ${this.kind}`);
+  }
+
+  const dog = new Animal('dog', 'auau');
+  const cat = new Animal('cat', 'meow');
+</script>
+</html>
