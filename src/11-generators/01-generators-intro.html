@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>01 - Generators Intro</title>
+</head>
+<body>
+
+</body>
+<script>
+  //Generators are a kind of iterators
+  function* genNames() {
+    console.log('Calling first name!');
+    yield 'Willian';
+    console.log('Calling second name!');
+    yield 'Jonas';
+    console.log('Calling third name!');
+    yield 'Gabriel';
+  }
+
+  const names = genNames();
+  console.log(names.next());
+  console.log(names.next());
+  console.log(names.next());
+</script>
+</html>
