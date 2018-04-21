@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title02 - Promises Example</title>
+</head>
+<body>
+
+</body>
+<script>
+  var posts = fetch('https://willianjusten.com.br/search.json');
+
+  //pending
+  //resolved
+  //rejected
+
+  posts
+    .then(data => data.json())
+    .then(data => {
+      console.log(data);
+      throw new Error('uops! we gotta an Error!');
+    })
+    .catch(err => console.log(err));
+</script>
+</html>
