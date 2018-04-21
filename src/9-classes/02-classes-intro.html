@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02 - Classes Intro</title>
+</head>
+<body>
+
+</body>
+<script>
+  class Animal {
+    constructor(kind, sound) {
+      this.kind = kind;
+      this.sound = sound;
+    }
+
+    hello() {
+      console.log(`${this.sound}, I'm a ${this.kind}`);
+    }
+    //Static methods are just avaiable for the class
+    static info() {
+      console.log('This is a class to create Animals');
+    }
+    //getter example
+    get name() {
+      console.log(`${this.sound}, My name is Jake!`);
+    }
+    //setter example
+    set nickname(nick) {
+      this.nick = nick;
+    }
+  }
+
+  const dog = new Animal('dog', 'auau');
+  const cat = new Animal('cat', 'meow');
+</script>
+</html>
