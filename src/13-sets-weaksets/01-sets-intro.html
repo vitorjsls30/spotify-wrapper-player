@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01 - Sets intro</title>
+</head>
+<body>
+
+</body>
+<script>
+  //We can define primitive values like string, numbers etc...
+  let mySet = new Set(['vitor', 'vinicius', 'henrique']);
+
+  //Just the first adition matters
+  mySet.add('otavio');
+  mySet.add('otavio');
+  mySet.add('otavio');
+  mySet.add('otavio');
+
+  mySet.delete('otavio');
+
+  console.log('has otavio? ', mySet.has('otavio'));
+  console.log('has vitor? ', mySet.has('vitor'));
+
+  //Sets are not based on index, but Iterators
+  console.log(mySet[2]);
+
+  let it = mySet.values();
+
+  console.log(it.next());
+
+  for (name of it) {
+    console.log(name);
+  }
+
+
+</script>
+</html>
