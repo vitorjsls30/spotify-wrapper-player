@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04 - Object Entries</title>
+</head>
+<body>
+
+</body>
+<script>
+  const animals = {
+    camel: 3,
+    llama: 2,
+    alpaca: 5
+  };
+
+  //returns Key: value
+  console.log(Object.entries(animal));
+
+  //You can build a map from the Object.entries
+  const animalsMap = new Map(Object.entries(animals));
+  console.log(animalsMap);
+
+  //Old method Object.keys - returns just Object Keys
+  console.log(Object.keys(animals));
+
+  console.log(animalsMap.size);
+  console.log(animalsMap.has('llama'));
+  console.log(animalsMap.has('lion'));
+  console.log(animalsMap.has('alpaca'));
+</script>
+</html>
