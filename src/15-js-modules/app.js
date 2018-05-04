@@ -16,6 +16,6 @@ console.log(arr4);
 
 console.log(sum(3, 5));
 console.log(sub(5, 3));
-console.log(multiply(5, 3));
+console.log(multiply(7, 2));
 console.log(div(4, 2));
 console.log(PI);
