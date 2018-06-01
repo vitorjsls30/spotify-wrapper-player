@@ -1,43 +1,66 @@
+/* global describe it */
 const expect = require('chai').expect;
+const calc = require('../src/main.js');
 
-// Describe our tes scenarios
-describe('Main', () => {
-  let arr;
+describe('Calc', () => {
+  // smoke tests
+  describe('Smoke Tests', () => {
+    it('should exist the calc lib', () => {
+      expect(calc).to.exist;
+    });
 
-  // performs a single run, before the block
-  before(() => {
-    // initialize db connectio
-    // create a dataset
+    it('should exist the method "sum"', () => {
+      expect(calc.sum).to.exist;
+      expect(calc.sum).to.be.a('function');
+    });
+
+    it('should exist the method "sub"', () => {
+      expect(calc.sub).to.exist;
+      expect(calc.sub).to.be.a('function');
+    });
+
+    it('should exist the method "mul"', () => {
+      expect(calc.mult).to.exist;
+      expect(calc.mult).to.be.a('function');
+    });
+
+    it('should exist the method "div"', () => {
+      expect(calc.div).to.exist;
+      expect(calc.div).to.be.a('function');
+    });
   });
 
-  // runs a single time, after a block
-  after(() => {
-    // terminate db connection
-    // erase the dataset
+  describe('Sum', () => {
+    it('should return 4 when sum(2, 2)', () => {
+      expect(calc.sum(2, 2)).to.be.equal(4);
+    });
   });
 
-  // runs every time, after EACH block
-  beforeEach(() => {
-    arr = [1, 2 , 3];
+  describe('Sub', () => {
+    it('should return 4 when sub(6, 2)', () => {
+      expect(calc.sub(6, 2)).to.be.equal(4);
+    });
+
+    it('should return -4 when sub(6, 10)', () => {
+      expect(calc.sub(6, 10)).to.be.equal(-4);
+    });
   });
 
-  // runs every time, after EACH block
-  afterEach(() => {
-
+  describe('Mult', () => {
+    it('should return 4 whe mult(2, 2)', () => {
+      expect(calc.mult(2, 2)).to.be.equal(4);
+    });
   });
 
-  it('should have a size of 4 when push another value to the array', () => {
-    arr.push(4);
-    expect(arr).to.have.lengthOf(4);
+  describe('Div', () => {
+    it('should return 2 when Div(4, 2)', () => {
+      expect(calc.div(4, 2)).to.be.equal(2);
+    });
+
+    it('should return "Its not possible to divide by 0!" when divide by 0', () => {
+      expect(calc.div(4, 0)).to.be.equal('Its not possible to divide by 0!');
+    });
   });
 
-  it('should have a size of 2 when pop a value from the array', () => {
-    arr.pop();
-    expect(arr).to.have.lengthOf(2);
-  });
-
-  it('should remove 3 when use pop in our array', () => {
-    expect(arr.pop() === 3).to.be.true;
-  });
 
 });
