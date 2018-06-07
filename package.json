@@ -4,10 +4,18 @@
   "description": "Our JS with TDD course library",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch",
-    "prepush": "npm run lint",
-    "lint": "./node_modules/.bin/eslint src/*js"
+    "lint": "./node_modules/.bin/eslint src/*js",
+    "prepush": "npm run lint && npm run test:coverage",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "functions": 80,
+    "lines": 80,
+    "reporter": ["text", "html"],
+    "exclude": ["tests/**"]
   },
   "repository": {
     "type": "git",
@@ -25,11 +33,14 @@
   },
   "homepage": "https://github.com/vitorjsls30/js-tdd-course#readme",
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^4.19.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0",
     "husky": "^0.14.3",
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "nyc": "^12.0.1"
   }
 }
