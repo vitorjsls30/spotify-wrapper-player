@@ -9,7 +9,7 @@
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test:coverage": "nyc npm test",
-    "start": "./node_modules/.bin/webpack-dev-server"
+    "start": "./node_modules/.bin/webpack-dev-server --open"
   },
   "nyc": {
     "check-coverage": true,
@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/vitorjsls30/spotify-wrapper-player#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
@@ -52,5 +53,8 @@
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "vs-spotify-wrapper": "^2.0.1"
   }
 }
