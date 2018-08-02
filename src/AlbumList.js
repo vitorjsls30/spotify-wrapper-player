@@ -9,7 +9,7 @@ function createMarkup(data) {
   </div>`).join('');
 }
 
-export default function renderAlbuns(data, element) {
+export default function renderAlbums(data, element) {
   const currentElement = element;
   const markup = createMarkup(data);
   currentElement.innerHTML = markup;
