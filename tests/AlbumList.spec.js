@@ -10,7 +10,7 @@ describe('AlbumList', () => {
     const data = [
         {
             "album_type": "album",
-            "artists": [{
+            artists: [{
                 "name": "Incubus",
             }],
             "id": "6peEdPVO73WtgGah5sEhX4",
