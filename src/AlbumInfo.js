@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 export default function renderAlbumInfo(data, element) {
     const markup = `<img class="album-image" src="${data.images[0].url}" alt="${data.name}">
     <p class="album-title">${data.name}</p>
