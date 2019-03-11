@@ -1,3 +1,4 @@
+/* global document  */
 import spotify from './Spotify';
 import renderAlbums from './AlbumList';
 
@@ -10,5 +11,5 @@ export default function searchEnterTrigger() {
         e.preventDefault();
         spotify.search.albums(seacrhInput.value)
             .then(data => renderAlbums(data.albums.items, albumList));
-    })
+    });
 }
