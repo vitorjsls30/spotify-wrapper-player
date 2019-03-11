@@ -2,6 +2,7 @@ import 'jsdom-global/register';
 import { expect } from 'chai';
 
 import renderAlbumTracks from '../src/AlbumTracks';
+import ConvertToHumanTime from '../src/ConvertToHumanTime';
 
 describe('AlbumTracks', () => {
     const data = [{
@@ -28,19 +29,19 @@ describe('AlbumTracks', () => {
     <div class="music" data-track-preview="https://p.scdn.co/mp3-preview/0fb9672884b90210b8e58fa79fb1b90a8dbd9eff?cid=774b29d4f13844c495f206cafdad9c86">
         <p class="music-number">1</p>
         <p class="music-title">Where The Streets Have No Name - Remastered</p>
-        <p class="music-duration">33705</p>
+        <p class="music-duration">${ConvertToHumanTime(33705)}</p>
     </div>`;
 
     const markup2 = `
     <div class="music" data-track-preview="https://p.scdn.co/mp3-preview/0fb9672884b90210b8e58fa79fb1b90a8dbd9eff?cid=774b29d4f13844c495f206cafdad9c86">
         <p class="music-number">1</p>
         <p class="music-title">Where The Streets Have No Name - Remastered</p>
-        <p class="music-duration">33705</p>
+        <p class="music-duration">${ConvertToHumanTime(33705)}</p>
     </div>
     <div class="music" data-track-preview="https://p.scdn.co/mp3-preview/0fb9672884b90210b8e58fa79fb1b90a8dbd9eff?cid=774b29d4f13844c495f206cafdad9c86">
         <p class="music-number">1</p>
         <p class="music-title">Where The Streets Have No Name - Remastered</p>
-        <p class="music-duration">33705</p>
+        <p class="music-duration">${ConvertToHumanTime(33705)}</p>
     </div>`;
 
     it('should creste and append the markup given a correct data', () => {
